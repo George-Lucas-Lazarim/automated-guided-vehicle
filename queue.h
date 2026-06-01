@@ -11,8 +11,8 @@ struct queueNode {
 };
 
 struct queue {
-    struct queueNode front;
-    struct queueNode rear;  
+    struct queueNode* front;
+    struct queueNode* rear;  
 };
 
 struct queue* createQueue();
