@@ -31,16 +31,21 @@ void enqueue (struct queue* queue, int orderID, int productID) {
     }
 }
 
-struct queueNode* dequeue (struct queue* queue) {
+bool dequeue (struct queue* queue, int* orderID, int* productID) {
     if (isEmpty(queue)) {
         printf("Error! The queue is empty");
-        return NULL;
-    } else  {
-        struct queueNode* auxPointer = queue->front;
-
-        queue->front = queue->front->next;
-        if (queue->front == NULL) queue->rear = NULL;
-
-        return auxPointer;
+        return false;
     }
+    
+    struct queueNode* auxPointer = queue->front;
+
+    *orderID = auxPointer->orderID;
+    *productID = auxPointer->productID;
+
+    queue->front = queue->front->next;
+    if (queue->front == NULL) queue->rear = NULL;
+
+    free(auxPointer);
+
+    return true;
 }
