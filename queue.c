@@ -30,3 +30,17 @@ void enqueue (struct queue* queue, int orderID, int productID) {
         queue->rear = newQueueNode;
     }
 }
+
+struct queueNode* dequeue (struct queue* queue) {
+    if (isEmpty(queue)) {
+        printf("Error! The queue is empty");
+        return NULL;
+    } else  {
+        struct queueNode* auxPointer = queue->front;
+
+        queue->front = queue->front->next;
+        if (queue->front == NULL) queue->rear = NULL;
+
+        return auxPointer;
+    }
+}
