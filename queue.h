@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 struct queueNode {
     int orderID;
@@ -16,5 +17,7 @@ struct queue {
 };
 
 struct queue* createQueue();
+bool isEmpty (struct queue* queue);
+void enqueue (struct queue* queue, int orderID, int productID);
 
 #endif
