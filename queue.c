@@ -1,6 +1,6 @@
 #include "queue.h"
 
-struct queue* createQueue() {
+struct queue* initQueue() {
     struct queue* newQueue = (struct queue*) malloc (sizeof(struct queue));
 
     if (newQueue == NULL) {
