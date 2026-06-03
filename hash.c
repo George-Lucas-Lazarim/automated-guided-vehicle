@@ -2,7 +2,7 @@
 
 struct hashNode* hashTable[HASH_SIZE];
 
-void initTable() {
+void initHashTable() {
     for (int i = 0; i < HASH_SIZE; i++) hashTable[i] = NULL;
 }
 

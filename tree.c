@@ -29,9 +29,9 @@ struct treeNode* addOrderID (struct treeNode* root, int orderID) {
         else if (auxPointer->orderID <= orderID) auxPointer = auxPointer->right;
     }
 
-    if (prevPointer == NULL) return initNode(orderID);
-
     auxPointer = initNode(orderID);
+
+    if (prevPointer == NULL) return auxPointer;
 
     if (prevPointer->orderID > orderID) prevPointer->left = auxPointer;
     else prevPointer->right = auxPointer;
