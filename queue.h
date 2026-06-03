@@ -17,7 +17,7 @@ struct queue {
 };
 
 struct queue* initQueue();
-bool isEmpty (struct queue* queue);
+bool isEmptyQueue (struct queue* queue);
 void enqueue (struct queue* queue, int orderID, int productID);
 bool dequeue (struct queue* queue, int* orderID, int* productID);
 

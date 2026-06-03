@@ -5,7 +5,7 @@ struct stack* initStack() {
 
     if (stack == NULL) {
         printf("Error! Memory allocation failed.");
-        return;
+        return NULL;
     }
 
     stack->top = NULL;
@@ -13,7 +13,7 @@ struct stack* initStack() {
     return stack;
 }
 
-bool isEmpty(struct stack* stack) {
+bool isEmptyStack (struct stack* stack) {
     if (stack == NULL) return true;
 
     return (stack->top == NULL);
@@ -35,7 +35,7 @@ void push (struct stack* stack, int orderID, int productID) {
 }
 
 bool pop (struct stack* stack, int* orderID, int* productID) {
-    if (isEmpty(stack)) {
+    if (isEmptyStack(stack)) {
         printf("\nError! The stack is empty or was not initialized (NULL).");
         return false;
     }
