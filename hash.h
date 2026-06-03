@@ -16,7 +16,7 @@ struct hashNode {
 
 extern struct hashNode* hashTable[HASH_SIZE];
 
-void initTable();
+void initHashTable();
 int hashFunction(int productID);
 void insertHash (int productID, int x, int y);
 bool searchAndPickProduct (int productID, int* x, int* y);

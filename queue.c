@@ -26,7 +26,7 @@ void enqueue (struct queue* queue, int orderID, int productID) {
 
     struct queueNode* newQueueNode = (struct queueNode*) malloc (sizeof(struct queueNode));
     if (newQueueNode == NULL) {
-        printf("Error! Memory allocation failure");
+        printf("\nError! Memory allocation failure");
         return;
     }
 
@@ -43,7 +43,7 @@ void enqueue (struct queue* queue, int orderID, int productID) {
 
 bool dequeue (struct queue* queue, int* orderID, int* productID) {
     if (isEmptyQueue(queue)) {
-        printf("Error! The queue is empty or was not initialized (NULL).");
+        printf("\nError! The queue is empty or was not initialized (NULL).");
         return false;
     }
     
